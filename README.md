@@ -1,2 +1,3 @@
-# linux_commands
-Linux commands
+## Download one folder a webserver
+
+``` wget -np -r [link] ```
