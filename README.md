@@ -25,3 +25,19 @@ tar -cvg snapshot-file -f backup_1.tar /
 ```
 for i in *.jpg; do convert "$i" -gamma 2.7 "${i%.*}_gamma.jpg"; done
 ```
+## Reminder in e-mail
+```
+#!/bin/bash
+
+# Set the renewal date
+renewal_date="09"
+
+# Get the current date
+current_date=$(date +"%d")
+
+# Check if the renewal date is approaching
+if [ "$current_date" == "$renewal_date" ]; then
+    # If the renewal date is today, send a notification email
+    echo "Please renew your VPS today!" | mail -s "VPS Renewal Reminder" info@mail.com
+fi
+```
