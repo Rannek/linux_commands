@@ -41,3 +41,14 @@ if [ "$current_date" == "$renewal_date" ]; then
     echo "Please renew your VPS today!" | mail -s "VPS Renewal Reminder" info@mail.com
 fi
 ```
+
+## Create swap
+
+```
+sudo fallocate -l 32G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+/swapfile   none    swap    sw    0   0
+free -h
+```
