@@ -21,3 +21,7 @@ done
 tar -cvg snapshot-file -f backup.tar /
 tar -cvg snapshot-file -f backup_1.tar /
 ```
+## Convert all files in the current folder
+```
+for i in *.jpg; do convert "$i" -gamma 2.7 "${i%.*}_gamma.jpg"; done
+```
