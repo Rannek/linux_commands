@@ -62,3 +62,8 @@ cp -v /usr/src/linux-6.6.10-zen/arch/x86/boot/bzImage /boot/kernel-6.6.10-zen
 genkernel initramfs --kernel-config=/usr/src/linux-6.6.10-zen/.config --kerneldir=/usr/src/linux-6.6.10-zen/ --bootdir=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+## Extract only files from a tar archive
+```
+tar --wildcards -xvf file.tar filename*
+```
