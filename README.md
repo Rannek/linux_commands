@@ -67,3 +67,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 tar --wildcards -xvf file.tar filename*
 ```
+## Incremental Rsync remote folder periodically
+```
+while true; do
+    rsync -avz -e 'ssh' --progress root@IP:/home/folder /home/
+    sleep 40
+done
+```
