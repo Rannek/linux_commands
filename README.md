@@ -104,3 +104,31 @@ rm -r upscaled
 rm video_without_sound.mkv
 
 ```
+# Python remove special characters from song names
+
+```
+import os
+import re
+
+def clean_filename(filename):
+    """Removes special characters, emojis, and keeps only standard characters."""
+    allowed_chars = r"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._ -"  
+    new_filename = re.sub(r'[^' + allowed_chars + ']', '', filename)
+    return new_filename
+
+def main():
+    current_dir = os.getcwd()  # Get the current working directory
+
+    for filename in os.listdir(current_dir):
+        if filename.endswith(".mp3"):  # Check for MP3 files
+            clean_name = clean_filename(filename)
+            if clean_name != filename:  # Rename only if changes are needed
+                old_filepath = os.path.join(current_dir, filename)
+                new_filepath = os.path.join(current_dir, clean_name)
+                os.rename(old_filepath, new_filepath)
+                print(f"Renamed '{filename}' to '{clean_name}'")
+
+if __name__ == "__main__":
+    main()
+
+```
