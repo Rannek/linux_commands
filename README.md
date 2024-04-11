@@ -132,3 +132,9 @@ if __name__ == "__main__":
     main()
 
 ```
+# Share folder in the local network
+
+```
+sshfs janos@192.168.0.100:/home/janos/Share /home/janos/Desktop/Share
+               SSHD SERVER                         REMOTE PC
+```
