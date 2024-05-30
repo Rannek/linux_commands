@@ -138,3 +138,18 @@ if __name__ == "__main__":
 sshfs janos@192.168.0.100:/home/janos/Share /home/janos/Desktop/Share
                SSHD SERVER                         REMOTE PC
 ```
+
+#Calculate fuel consumption Python script
+
+```
+# Ask for user inputs
+km = float(input("Enter the KM value: "))
+fuel_price = float(input("Enter the fuel price in HUF (one liter): "))
+
+# Calculate and print the cost for each consumption value
+for consumption in range(50, 71):
+    consumption /= 10  # Convert to liters/100km
+    cost = (consumption / 100) * km * fuel_price
+    print(f"{consumption} liters/100km = {cost} HUF")
+
+```
